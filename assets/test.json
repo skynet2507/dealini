@@ -1,0 +1,42 @@
+[
+  {
+    "created": "02.04.2018",
+    "lastIP": "",
+    "visits": 0,
+    "shortUrl": "94aa1",
+    "redirectUrl": "http://b92.net",
+    "id": 14
+  },
+  {
+    "created": "02.04.2018",
+    "lastIP": "127.0.0.1",
+    "visits": 2,
+    "shortUrl": "d5720",
+    "redirectUrl": "http://google.rs",
+    "id": 13
+  },
+  {
+    "created": "02.04.2018",
+    "lastIP": "127.0.0.1",
+    "visits": 1,
+    "shortUrl": "256b1",
+    "redirectUrl": "http://google.com",
+    "id": 12
+  },
+  {
+    "created": "02.04.2018",
+    "lastIP": "127.0.0.1",
+    "visits": 11,
+    "shortUrl": "6f320",
+    "redirectUrl": "https://github.com",
+    "id": 11
+  },
+  {
+    "created": "02.04.2018",
+    "lastIP": "127.0.0.1",
+    "visits": 0,
+    "shortUrl": "9c440",
+    "redirectUrl": "https://github.com/memcached/memcached",
+    "id": 10
+  }
+]

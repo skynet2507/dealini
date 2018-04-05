@@ -1,0 +1,55 @@
+<md-dialog>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>{{ url.redirectUrl }}</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <i class="material-icons">clear</i>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <div class="md-dialog-content">
+            <md-list>
+                <md-subheader class="md-no-sticky">List of visits</md-subheader>
+                <md-list-item class="md-3-line" ng-repeat="visit in visits">
+                    <div class="md-avatar-icon">
+                        <p>{{ $index+1 }}</p>
+                    </div>
+                    <div class="md-list-item-text" layout="column">
+                        <h3>Date: {{ visit.created }}</h3>
+                        <h4>Last call from IP: {{ visit.lastIP }} @ {{ visit.lastVisitAt }}</h4>
+                        <p># visits: {{ visit.visits }}</p>
+                    </div>
+                </md-list-item>
+                 <md-list-item ng-if="visits.length == 0">
+                    <p>No visits.</p>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-subheader class="md-no-sticky">List of visitors</md-subheader>
+                <md-list-item class="md-3-line" ng-repeat="visitor in visitors">
+                    <div class="md-avatar-icon">
+                        <p>{{ $index+1 }}</p>
+                    </div>
+                    <div class="md-list-item-text" layout="column">
+                        <h3>First visit: {{ visitor.firstVisit }}</h3>
+                        <h4>IP address: {{ visitor.ip }} @ {{ visitor.lastVisit }}</h4>
+                        <p># visits: {{ visitor.visits }}</p>
+                        <small>{{ visitor.userAgent }}</small>
+                    </div>
+                </md-list-item>
+                <md-list-item ng-if="visitors.length == 0">
+                    <p>No visitors.</p>
+                </md-list-item>
+            </md-list>
+        </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button ng-click="cancel()">
+            Close
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

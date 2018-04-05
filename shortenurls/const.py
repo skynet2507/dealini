@@ -1,0 +1,5 @@
+SHORT_URL_LENGTH = 5
+SHORT_URL_MEMCACHE_KEY = "short_url:{}"
+ORIGINAL_URL_MEMCACHE_KEY = "original-url:{}"
+DATE_FORMAT = "%d/%m/%Y"
+DATETIME_FORMAT = "%d.%m.%Y %H:%M"

@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="home-page md-whiteframe-2dp" layout="column" layout-padding="" ng-controller="HomeController">
+        <div class="md-toolbar-tools">
+            Enter URL to short
+        </div>
+        <div layout="column">
+            <form name="urlForm">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Your URL goes here</label>
+                    <input ng-change="disableShort=False" name="url" ng-model="url.URL"/>
+                </md-input-container>
+            </form>
+        </div>
+        <div layout>
+            <span flex></span>
+            <md-button class="md-primary" ng-click="checkUrls()"><md-tooltip>View all available URLs</md-tooltip>View all URLs</md-button>
+            <md-button class="md-primary" ng-click="shortUrl()" ng-disabled="disableShort">Short it!</md-button>
+        </div>
+    {% verbatim %}
+        <div layout="column" ng-if="url.shortUrl" layout-align="center center">
+            <h3><i>Your URL is ready!</i></h3>
+            <p><a ng-if="showUrl" href="{{ url.shortUrl }}" target="_blank">{{ url.shortUrl }}</a></p>
+            <div layout="row">
+                <md-button class="md-fab md-mini md-primary" aria-label="close" ng-click="showUrl=!showUrl">
+                    <md-tooltip ng-if="!showUrl">View URL</md-tooltip>
+                    <md-tooltip ng-if="showUrl">Hide URL</md-tooltip>
+                    <i ng-if="!showUrl" class="material-icons">visibility</i>
+                    <i ng-if="showUrl" class="material-icons">visibility_off</i>
+                </md-button>
+                <md-button class="md-fab md-mini md-primary" aria-label="close" ngclipboard data-clipboard-text="{{ url.shortUrl }}">
+                    <md-tooltip>Copy</md-tooltip><i class="material-icons">content_copy</i>
+                </md-button>
+                <md-button class="md-fab md-mini md-primary" ng-click="resetResults()">
+                    <md-tooltip>Reset all</md-tooltip>
+                    <i class="material-icons">autorenew</i>
+                </md-button>
+            </div>
+        </div>
+    {% endverbatim %}
+    </div>
+
+{% endblock %}

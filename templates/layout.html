@@ -1,0 +1,32 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dealini URL Shortener</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="{% static 'css/angular-material.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body ng-app="DealiniApp">
+<header>
+    <md-toolbar md-scroll-shrink>
+        <div class="md-toolbar-tools logo">
+            <a href="{% url 'home' %}"><img src="{% static 'img/dealini-white.png' %}" alt="dealini logo"></a>
+            <p>Dealini URL Shortener Service</p>
+        </div>
+  </md-toolbar>
+</header>
+{% block content %} {% endblock %}
+
+<script src="{% static 'lib/angular.min.js' %}"></script>
+<script src="{% static 'lib/angular-animate.min.js' %}"></script>
+<script src="{% static 'lib/angular-aria.min.js' %}"></script>
+<script src="{% static 'lib/angular-messages.min.js' %}"></script>
+<script src="{% static 'lib/angular-material.min.js' %}"></script>
+<script src="{% static 'lib/clipboard.min.js' %}"></script>
+<script src="{% static 'lib/ngclipboard.min.js' %}"></script>
+<script src="{% static 'js/controllers.js' %}"></script>
+<script src="{% static 'js/service.js' %}"></script>
+</body>
+</html>
